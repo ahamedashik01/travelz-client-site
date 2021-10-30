@@ -2,14 +2,123 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* custom css  */
+
+/* colors  */
+.text-color {
+  color: #222222;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.primary-color-bg{
+  background-color: #31D2F2;
+}
+
+.secondary-color{
+  color:#03425B;
+}
+
+
+/* form  */
+.login-form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.form{    
+  border: 1px solid black;
+  margin: 30px;
+  padding: 50px;
+}
+.input{
+  padding: 4px;
+  margin: 8px;
+}
+
+
+/* user */
+.user img{
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+/* banner */
+.bg-banner{
+  background-color: rgba(7, 7, 7, 0.521);
+}
+
+.quality{
+  background-image: url("https://image.freepik.com/free-vector/abstract-background-with-squares_23-2148995948.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.icon{
+  color: #31D2F2;
+}
+.h-card{
+  transition: 0.5s;
+}
+.h-card:hover{
+  background-color: #31D2F2;
+  color: white;
+  box-shadow: 5px 5px 20px rgb(51, 51, 51);
+}
+.h-card:hover .icon{
+  color: #fff;
+
+}
+
+.pricing{
+  background-image: url("https://image.freepik.com/free-vector/abstract-background-with-squares_23-2148995948.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.Price-card{
+  transition: 0.8s;
+}
+
+
+.Price-card:hover{
+  transform: scale(1.1);
+}
+
+.price{
+  background-color: #31d2f23f;
+}
+.service-card-img {
+  overflow: hidden;
+}
+.service-card-img img{
+  transition: 0.8s;
+}
+
+.service-card-img:hover img{
+  transform: scale(1.2);
+}
+
+
+.footer{
+  background-color:#187EAE ;
+}
+
+
+/* responsive behaviour */
+@media only screen and (max-width: 768px) {
+  .block{
+    display: none;
+  }
+
+  .user-div{
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .departments{
+    padding: 50px;
+  }
+  .contact{
+    margin-right: 40px ;
   }
 }
 

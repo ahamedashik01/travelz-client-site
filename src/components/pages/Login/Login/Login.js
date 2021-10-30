@@ -34,7 +34,7 @@ const Login = () => {
                     <br />
                     <input className="btn btn-info text-white px-3" type="submit" value="Log In" />
                 </form>
-                <p className="my-4">New to Medicoz? <br /> <Link to="/registration">Create Account</Link></p>
+                <p className="my-4">New to Travelz? <br /> <Link to="/registration">Create Account</Link></p>
                 <div>Or</div>
                 <hr />
                 <button onClick={UseSignInUsingGoogle} className="btn btn-info px-3 text-white"><i className="fab fa-google me-3"> Google Sign In</i></button>

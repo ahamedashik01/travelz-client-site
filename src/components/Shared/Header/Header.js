@@ -60,7 +60,8 @@ const Header = () => {
                                     {
                                         user.email ?
                                             <button onClick={logOut} className="px-2 btn btn-danger text-white"> Logout</button> :
-                                            <Link to="/login"><button className="px-3 text-white btn btn-info">Log In</button></Link>}
+                                            <Link to="/login"><button className="px-3 text-dark btn btn-info text-white"><i className="fas fa-user me-2"></i>Log In</button></Link>
+                                    }
                                 </div>
                             </div>
                         </Col>
@@ -70,7 +71,7 @@ const Header = () => {
             <Navbar className="py-3 primary-color-bg" sticky="top" collapseOnSelect expand="lg" variant="dark">
                 <Container>
                     <Link className="text-decoration-none" to="/home">
-                        <Navbar.Brand className="fs-3 fw-bold"><i className="fas fa-clinic-medical"></i> Medicoz</Navbar.Brand>
+                        <Navbar.Brand className="fs-4 fw-bold"><i className="fas fa-plane-departure me-2"></i>Travelz</Navbar.Brand>
                     </Link>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
