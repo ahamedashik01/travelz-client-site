@@ -12,10 +12,10 @@ const Banner = () => {
                         alt="First slide"
                     />
                     <Carousel.Caption className="bg-banner border-start border-5 border-info w-50 mx-auto text-start p-5 lh-lg block ">
-                        <h1 className="text-white">Backpacking Trips For Solo<br />
+                        <h1 className="text-dark">Backpacking Trips For Solo<br />
                             <span className="text-info">Travellers</span></h1>
-                        <p className="text-white fs-5">Travel & make new friends!</p>
-                        <button className="btn btn-info text-white px-4">About Us</button>
+                        <p className="text-dark fs-5">Travel & make new friends!</p>
+                        <button className="btn btn-dark text-white px-4">About Us</button>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -25,9 +25,9 @@ const Banner = () => {
                         alt="Second slide"
                     />
                     <Carousel.Caption className="bg-banner border-start border-5 border-info w-50 mx-auto text-start p-5 lh-lg block">
-                        <h1 className="text-white">Backpacking Trips For Solo <br /> <span className="text-info">Travellers</span></h1>
-                        <p className="text-white fs-5">Travel & make new friends!</p>
-                        <button className="btn btn-info text-white px-4 ">About Us</button>
+                        <h1 className="text-dark">Backpacking Trips For Solo <br /> <span className="text-info">Travellers</span></h1>
+                        <p className="text-dark fs-5">Travel & make new friends!</p>
+                        <button className="btn btn-dark text-white px-4 ">About Us</button>
                     </Carousel.Caption>
                 </Carousel.Item>
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Col, Container, Dropdown, Button, Nav, Navbar, Row, Offcanvas, Table } from 'react-bootstrap';
+import { Col, Container, Button, Nav, Navbar, Row, Offcanvas, Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { NavHashLink } from 'react-router-hash-link';
 import useAuth from '../../../hooks/useAuth';
@@ -11,13 +11,12 @@ const Header = () => {
 
     //react-offcanvas
     const [show, setShow] = useState(false);
-
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     return (
-        <div className="secondary-color z-index-l">
+        <div className="secondary-color">
             <div >
-                <Container className="border-top border-5 border-info">
+                <Container className="border-top border-5 border-dark">
                     <Row>
                         <Col xs={12} md={6}>
                             <div className="py-2 d-flex ">
@@ -56,7 +55,7 @@ const Header = () => {
                                     {
                                         user.email || userImg ?
                                             <div>
-                                                <Button style={{ backgroundImage: `url(${userImg})`, backgroundSize: 'cover', height: '50px', width: '50px', borderRadius: '50%' }} variant="info" onClick={handleShow} className="text-white">
+                                                <Button style={{ backgroundImage: `url(${userImg})`, backgroundSize: 'cover', height: '50px', width: '50px', borderRadius: '50%' }} variant="dark" onClick={handleShow} className="text-white">
                                                 </Button>
                                                 <Offcanvas show={show} onHide={handleClose} placement="end">
                                                     <Offcanvas.Header className="ms-auto" closeButton>
@@ -86,7 +85,7 @@ const Header = () => {
                                                                 </tr>
                                                                 <tr>
                                                                     <td>
-                                                                        <Link className="text-uppercase text-decoration-none text-color" to="">Add A Package<span class="badge bg-primary ms-3">New</span></Link>
+                                                                        <Link className="text-uppercase text-decoration-none text-color" to="">Add A Package<span class="badge bg-dark rounded-pill ms-2">New</span></Link>
                                                                     </td>
                                                                 </tr>
                                                             </tbody>
@@ -104,7 +103,7 @@ const Header = () => {
                 </Container>
 
             </div>
-            <Navbar className="py-3 primary-color-bg" sticky="top" collapseOnSelect expand="lg" variant="dark">
+            <Navbar className="py-3 " sticky="top" collapseOnSelect expand="lg" bg="light">
                 <Container>
                     <Link className="text-decoration-none" to="/home">
                         <Navbar.Brand className="fs-4 fw-bold"><i className="fas fa-plane-departure me-2"></i>Travelz</Navbar.Brand>
@@ -112,12 +111,12 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="ms-auto">
-                            <Nav.Link as={Link} className="text-white text-uppercase" to="/home">Home</Nav.Link>
+                            <Nav.Link as={Link} className="text-dark text-uppercase" to="/home">Home</Nav.Link>
                             <Nav.Link>
-                                <NavHashLink className="text-white text-uppercase text-decoration-none" to="/home#services">packages</NavHashLink>
+                                <NavHashLink className="text-dark text-uppercase text-decoration-none" to="/home#services">packages</NavHashLink>
                             </Nav.Link>
-                            <Nav.Link as={Link} className="text-white text-uppercase" to="/about">About us</Nav.Link>
-                            <Nav.Link as={Link} className="text-white text-uppercase" to="/contact">Contact</Nav.Link>
+                            <Nav.Link as={Link} className="text-dark text-uppercase" to="/about">About us</Nav.Link>
+                            <Nav.Link as={Link} className="text-dark text-uppercase" to="/contact">Contact</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
