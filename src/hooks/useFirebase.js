@@ -36,17 +36,9 @@ const useFirebase = () => {
 
 
     const handleLoginWithEmail = e => {
-        setIsLoading(true);
-        e.preventDefault();
-        signInWithEmailAndPassword(auth, email, password)
-            .then(result => {
-                setUser(result.user);
-                setError('');
-            })
-            .catch(error => {
-                setError(error.message)
-            })
-            .finally(() => setIsLoading(false));
+
+        return signInWithEmailAndPassword(auth, email, password)
+
     }
 
     const handleEmailChange = e => {
@@ -90,7 +82,6 @@ const useFirebase = () => {
 
 
     const signInUsingGoogle = () => {
-        setIsLoading(true);
 
         return signInWithPopup(auth, googleProvider)
 
