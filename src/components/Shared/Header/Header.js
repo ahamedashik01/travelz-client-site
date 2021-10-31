@@ -1,5 +1,5 @@
-import React from 'react';
-import { Col, Container, Nav, Navbar, Row } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Col, Container, Dropdown, Button, Nav, Navbar, Row, Offcanvas, Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { NavHashLink } from 'react-router-hash-link';
 import useAuth from '../../../hooks/useAuth';
@@ -7,10 +7,15 @@ import "./Header.css"
 
 const Header = () => {
     const { user, logOut } = useAuth();
-
     const userImg = user.photoURL;
+
+    //react-offcanvas
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
     return (
-        <div className="secondary-color">
+        <div className="secondary-color z-index-l">
             <div >
                 <Container className="border-top border-5 border-info">
                     <Row>
@@ -34,22 +39,13 @@ const Header = () => {
                         </Col>
                         <Col xs={12} md={6}>
                             <div className="d-flex p-3 user-div justify-content-end align-items-center" >
-
-                                <div className="me-3">
-                                    {
-                                        userImg &&
-                                        <div className="user">
-                                            <img src={userImg} alt="" />
-                                        </div>
-                                    }
-                                </div>
-                                <div className="me-3">
+                                <div className="me-2">
                                     {
                                         user.email &&
                                         <h6>{user.displayName}</h6>
                                     }
                                 </div>
-                                <div className="me-3">
+                                <div className="me-2">
                                     {
                                         !user.displayName && <div className="user">
                                             <h6>{user.displayName}</h6>
@@ -58,8 +54,47 @@ const Header = () => {
                                 </div>
                                 <div>
                                     {
-                                        user.email ?
-                                            <button onClick={logOut} className="px-2 btn btn-danger text-white"> Logout</button> :
+                                        user.email || userImg ?
+                                            <div>
+                                                <Button style={{ backgroundImage: `url(${userImg})`, backgroundSize: 'cover', height: '50px', width: '50px', borderRadius: '50%' }} variant="info" onClick={handleShow} className="text-white">
+                                                </Button>
+                                                <Offcanvas show={show} onHide={handleClose} placement="end">
+                                                    <Offcanvas.Header className="ms-auto" closeButton>
+                                                    </Offcanvas.Header>
+                                                    <Offcanvas.Body>
+                                                        <div className=" d-flex justify-content-center align-items-center">
+                                                            <div className="d-flex flex-column justify-content-center align-items-center">
+                                                                <div className="user-profile mb-4">
+                                                                    <img src={userImg} alt="user-profile" />
+                                                                </div>
+                                                                <h4 className="mb-3">{user.displayName}</h4>
+                                                                <button onClick={logOut} className="px-5 btn btn-danger text-white rounded-pill"> Logout</button>
+                                                            </div>
+                                                        </div>
+                                                        <Table hover className="mt-5">
+                                                            <tbody>
+                                                                <Link to=""></Link>
+                                                                <tr>
+                                                                    <td>
+                                                                        <Link className="text-uppercase text-decoration-none text-color" to="">My Orders</Link>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <Link className="text-uppercase text-decoration-none text-color" to="">Manage All Orders</Link>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <Link className="text-uppercase text-decoration-none text-color" to="">Add A Package<span class="badge bg-primary ms-3">New</span></Link>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </Table>
+                                                    </Offcanvas.Body>
+                                                </Offcanvas>
+                                            </div>
+                                            :
                                             <Link to="/login"><button className="px-3 text-dark btn btn-info text-white"><i className="fas fa-user me-2"></i>Log In</button></Link>
                                     }
                                 </div>
@@ -67,6 +102,7 @@ const Header = () => {
                         </Col>
                     </Row>
                 </Container>
+
             </div>
             <Navbar className="py-3 primary-color-bg" sticky="top" collapseOnSelect expand="lg" variant="dark">
                 <Container>
@@ -78,10 +114,9 @@ const Header = () => {
                         <Nav className="ms-auto">
                             <Nav.Link as={Link} className="text-white text-uppercase" to="/home">Home</Nav.Link>
                             <Nav.Link>
-                                <NavHashLink className="text-white text-uppercase text-decoration-none" to="/home#services">Services</NavHashLink>
+                                <NavHashLink className="text-white text-uppercase text-decoration-none" to="/home#services">packages</NavHashLink>
                             </Nav.Link>
                             <Nav.Link as={Link} className="text-white text-uppercase" to="/about">About us</Nav.Link>
-                            <Nav.Link as={Link} className="text-white text-uppercase" to="/pharmacy">Pharmacy</Nav.Link>
                             <Nav.Link as={Link} className="text-white text-uppercase" to="/contact">Contact</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>

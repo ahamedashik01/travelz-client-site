@@ -3,7 +3,12 @@
 }
 
 /* custom css  */
-
+.z-index-h{
+  z-index: 9999;
+}
+.z-index-l{
+  z-index: 99;
+}
 /* colors  */
 .text-color {
   color: #222222;
@@ -40,6 +45,11 @@
 .user img{
   height: 50px;
   width: 50px;
+  border-radius: 50%;
+}
+.user-profile img{
+  height: 100px;
+  width: 100px;
   border-radius: 50%;
 }
 
