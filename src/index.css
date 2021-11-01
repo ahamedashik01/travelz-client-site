@@ -1,8 +1,17 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Titillium+Web:wght@300&display=swap');
+
 body {
   margin: 0;
-  font-family: 'Karla', sans-serif;
+  font-family: 'Anton', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+body p{
+  font-size:18px;
+}
+body p,li{
+  font-family: 'Titillium Web', sans-serif;
 }
 
 code {

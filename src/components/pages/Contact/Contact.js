@@ -12,7 +12,7 @@ const Contact = () => {
                 <Row className="g-5">
                     <Col sm={12} md={6}>
                         <div>
-                            <img className="img-fluid" src="https://image.freepik.com/free-photo/hands-unrecognizable-female-doctor-writing-form-typing-laptop-keyboard_1098-20374.jpg" alt="hero" />
+                            <img className="img-fluid" src="https://image.freepik.com/free-vector/flat-travel-background_23-2148050086.jpg" alt="hero" />
                         </div>
 
                     </Col>
@@ -48,7 +48,7 @@ const Contact = () => {
                                     <Form.Control />
                                 </Form.Group>
                             </Row>
-                            <button className="btn btn-info text-white px-5 mt-3">
+                            <button className="btn btn-dark rounded-pill text-white px-5 mt-3">
                                 Send
                             </button>
                         </Form>

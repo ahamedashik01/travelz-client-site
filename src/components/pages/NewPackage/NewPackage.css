@@ -17,3 +17,26 @@
 }
 
 /* use media query */
+
+@media only screen and (max-width: 768px)  {
+    .package-adder{
+        border: 2px solid #000;
+        width: 90%;
+        margin: auto;
+    }
+    .package-adder form input,textarea{
+        width: 90%;
+        margin: 25px 0;
+    }
+}
+@media only screen and (max-width: 1024px)  {
+    .package-adder{
+        border: 2px solid #000;
+        width: 90%;
+        margin: auto;
+    }
+    .package-adder form input,textarea{
+        width: 90%;
+        margin: 25px 0;
+    }
+}

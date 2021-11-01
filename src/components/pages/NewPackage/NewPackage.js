@@ -7,11 +7,13 @@ const NewPackage = () => {
     const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = data => {
+        const newPakageInc = [data.pakageInc];
+        data.pakageInc = newPakageInc;
         console.log(data);
-        axios.post('http://localhost:5000/packages', data)
+        axios.post('https://fierce-lowlands-27228.herokuapp.com/packages', data)
             .then(res => {
                 if (res.data.insertedId) {
-                    alert('Package Added Successfully');
+                    alert('Package Added Successfully. Go to PACKAGES to see Your Added Package');
                     reset();
                 }
             })

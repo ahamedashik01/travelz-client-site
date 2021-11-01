@@ -67,6 +67,7 @@ const Header = () => {
                                                                     <img src={userImg} alt="user-profile" />
                                                                 </div>
                                                                 <h4 className="mb-3">{user.displayName}</h4>
+                                                                <p>{user.email}</p>
                                                                 <button onClick={logOut} className="px-5 btn btn-danger text-white rounded-pill"> Logout</button>
                                                             </div>
                                                         </div>
@@ -75,12 +76,12 @@ const Header = () => {
                                                                 <Link to=""></Link>
                                                                 <tr>
                                                                     <td>
-                                                                        <Link className="text-uppercase text-decoration-none text-color" to="/my-order">My Orders</Link>
+                                                                        <Link className="text-uppercase text-decoration-none text-color" to="/my-order">My Bookings</Link>
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>
-                                                                        <Link className="text-uppercase text-decoration-none text-color" to="/manage-all-order">Manage All Orders</Link>
+                                                                        <Link className="text-uppercase text-decoration-none text-color" to="/manage-all-order">Manage All Bookings</Link>
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
@@ -113,7 +114,7 @@ const Header = () => {
                         <Nav className="ms-auto">
                             <Nav.Link as={Link} className="text-dark text-uppercase" to="/home">Home</Nav.Link>
                             <Nav.Link>
-                                <NavHashLink className="text-dark text-uppercase text-decoration-none" to="/home#services">packages</NavHashLink>
+                                <NavHashLink className="text-dark text-uppercase text-decoration-none" to="/home#packages">packages</NavHashLink>
                             </Nav.Link>
                             <Nav.Link as={Link} className="text-dark text-uppercase" to="/about">About us</Nav.Link>
                             <Nav.Link as={Link} className="text-dark text-uppercase" to="/contact">Contact</Nav.Link>
