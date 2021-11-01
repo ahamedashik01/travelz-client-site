@@ -1,0 +1,19 @@
+.package-adder{
+    border: 2px solid #000;
+    width: 50%;
+    margin: auto;
+}
+
+.package-adder form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.package-adder form input,textarea{
+    width: 40%;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+/* use media query */

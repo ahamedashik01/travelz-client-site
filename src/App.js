@@ -11,6 +11,9 @@ import Register from './components/pages/Login/Register/Register';
 import About from './components/pages/About/About';
 import Contact from './components/pages/Contact/Contact';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import MyOrders from './components/pages/MyOrders/MyOrders';
+import AllOrders from './components/pages/AllOrders/AllOrders';
+import NewPackage from './components/pages/NewPackage/NewPackage';
 
 
 
@@ -32,6 +35,15 @@ function App() {
             </PrivateRoute>
             <Route path="/contact">
               <Contact></Contact>
+            </Route>
+            <Route path="/my-order">
+              <MyOrders></MyOrders>
+            </Route>
+            <Route path="/manage-all-order">
+              <AllOrders></AllOrders>
+            </Route>
+            <Route path="/add-packages">
+              <NewPackage></NewPackage>
             </Route>
             <Route path="/login">
               <Login></Login>

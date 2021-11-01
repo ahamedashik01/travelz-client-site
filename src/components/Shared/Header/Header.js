@@ -75,17 +75,17 @@ const Header = () => {
                                                                 <Link to=""></Link>
                                                                 <tr>
                                                                     <td>
-                                                                        <Link className="text-uppercase text-decoration-none text-color" to="">My Orders</Link>
+                                                                        <Link className="text-uppercase text-decoration-none text-color" to="/my-order">My Orders</Link>
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>
-                                                                        <Link className="text-uppercase text-decoration-none text-color" to="">Manage All Orders</Link>
+                                                                        <Link className="text-uppercase text-decoration-none text-color" to="/manage-all-order">Manage All Orders</Link>
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>
-                                                                        <Link className="text-uppercase text-decoration-none text-color" to="">Add A Package<span class="badge bg-dark rounded-pill ms-2">New</span></Link>
+                                                                        <Link className="text-uppercase text-decoration-none text-color" to="/add-packages">Add A Package<span class="badge bg-dark rounded-pill ms-2">New</span></Link>
                                                                     </td>
                                                                 </tr>
                                                             </tbody>
@@ -94,7 +94,7 @@ const Header = () => {
                                                 </Offcanvas>
                                             </div>
                                             :
-                                            <Link to="/login"><button className="px-3 text-dark btn btn-info text-white"><i className="fas fa-user me-2"></i>Log In</button></Link>
+                                            <Link to="/login"><button className="px-3 text-dark btn btn-dark text-white"><i className="fas fa-user me-2"></i>Log In</button></Link>
                                     }
                                 </div>
                             </div>
