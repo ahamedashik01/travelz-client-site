@@ -15,6 +15,7 @@ import MyOrders from './components/pages/MyOrders/MyOrders';
 import AllOrders from './components/pages/AllOrders/AllOrders';
 import NewPackage from './components/pages/NewPackage/NewPackage';
 import PackageDetails from './components/PackageDetails/PackageDetails';
+import Booking from './components/pages/Booking/Booking';
 
 
 
@@ -39,6 +40,9 @@ function App() {
             </Route>
             <PrivateRoute path="/packages/:id">
               <PackageDetails></PackageDetails>
+            </PrivateRoute>
+            <PrivateRoute path="/booking/:id">
+              <Booking></Booking>
             </PrivateRoute>
             <Route path="/my-order">
               <MyOrders></MyOrders>

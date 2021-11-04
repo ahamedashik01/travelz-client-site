@@ -1,0 +1,36 @@
+
+.booking-adder form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.booking-adder form input,textarea{
+    width: 90%;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+
+@media only screen and (max-width: 768px)  {
+    .booking-adder{
+        
+        width: 90%;
+        margin: auto;
+    }
+    .booking-adder form input,textarea{
+        width: 90%;
+        margin: 25px 0;
+    }
+}
+@media only screen and (max-width: 1024px)  {
+    .booking-adder{
+        
+        width: 90%;
+        margin: auto;
+    }
+    .booking-adder form input,textarea{
+        width: 90%;
+        margin: 25px 0;
+    }
+}

@@ -9,7 +9,7 @@ const NewPackage = () => {
     const onSubmit = data => {
         const newPakageInc = [data.pakageInc];
         data.pakageInc = newPakageInc;
-        console.log(data);
+
         axios.post('https://fierce-lowlands-27228.herokuapp.com/packages', data)
             .then(res => {
                 if (res.data.insertedId) {

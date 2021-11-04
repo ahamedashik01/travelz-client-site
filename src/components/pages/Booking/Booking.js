@@ -1,11 +1,20 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Badge, Col, Container, Row } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
+import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
+import './Booking.css'
 
-const PackageDetails = () => {
+const Booking = () => {
     const [packages, setPackages] = useState([]);
     const { id } = useParams();
+
+    const { user } = useAuth();
+
+    const { _id, tourTittle, tourCost, tourLength, noOFMeal, noOFAct, avgGrpSize_min, avgGrpSize_max } = packages;
+
     const url = `https://fierce-lowlands-27228.herokuapp.com/packages/${id}`
     useEffect(() => {
         fetch(url)
@@ -13,32 +22,34 @@ const PackageDetails = () => {
             .then(data => setPackages(data))
     }, []);
 
-    const { _id, tourTittle, thumNail, detailDes, headerDes, pakageInc, tourCost, tourLength, noOFMeal, noOFAct, avgGrpSize_min, avgGrpSize_max } = packages;
-    console.log(pakageInc)
+    const { register, handleSubmit, reset } = useForm();
+    const onSubmit = data => {
+        const userName = user.displayName;
+        const userEmail = user.email;
+        data.booking = packages;
+        axios.post('https://fierce-lowlands-27228.herokuapp.com/booking', data)
+            .then(res => {
+                if (res.data.insertedId) {
+                    alert('Package Added Successfully. Go to PACKAGES to see Your Added Package');
+                    reset();
+                }
+            })
+    }
+
+
     return (
-        <div className="my-5 py-5 ">
-            <Container>
-                <Row>
-                    <Col sm={12} md={8}>
-                        <div className="text-start">
-                            <h1 className="mb-4">Backpacking {tourTittle}</h1>
-                            <p className="mb-4 fs-4">{headerDes}</p>
-                            <img className="img-fluid" src={thumNail} alt="" />
-                            <p>{detailDes}</p>
-                            <h3 className="mb-4">Package Includes</h3>
-                            <ul>
-                                {
-                                    pakageInc?.map(p => <li> {p} </li>)
-                                }
-                            </ul>
-                            <button className="btn btn-dark text-white mt-3 px-4 rounded-pill">Book Now</button>
-                        </div>
-                    </Col>
-                    <Col sm={12} md={4} className="mb-5">
+        <div>
+            <Container className="py-5">
+                <Row className="g-4">
+                    <Col sm={12} md={5} className="mb-5">
                         <div className="p-3 shadow ">
                             <div className="des text-start mt-2">
-                                <h3 className="mb-3">{tourTittle} <Badge className="ms-2" pill bg="dark"><i className="fas fa-pound-sign me-2"></i>{tourCost}</Badge></h3>
+                                <h3 className="mb-3">{tourTittle}</h3>
                                 <hr />
+                                <div className="p-2 rounded-pill bg-dark text-white d-flex justify-content-between align-items-center">
+                                    <h4 className="ps-3">Total Cost</h4>
+                                    <h4 className="pe-3"><i className="fas fa-pound-sign me-1"></i>{tourCost} GBP</h4>
+                                </div>
                             </div>
 
                             <div className="des text-start py-3">
@@ -78,21 +89,38 @@ const PackageDetails = () => {
                                                 <p>{avgGrpSize_min} - {avgGrpSize_max}</p>
                                             </div>
                                         </div>
+                                        <div className="d-flex justify-content-center align-items-center">
+                                            <Link className="text-dark" to={`/packages/${_id}`}>
+                                                <p className="fs-5  text-dark">see what's inclued?</p>
+                                            </Link>
+                                        </div>
                                     </Col>
                                 </Row>
-                                <div className="d-flex justify-content-center align-items-center">
-                                    <Link to={`/booking/${_id}`}>
-                                        <button className="btn btn-dark text-white px-4 rounded-pill">Book Now</button>
-                                    </Link>
-                                </div>
                             </div>
                         </div>
                     </Col>
+                    <Col sm={12} md={7}>
+                        <div className="booking-adder shadow p-2">
+                            <h4 className="my-4 text-center px-4"> Your Details</h4>
+                            <hr />
+                            <form onSubmit={handleSubmit(onSubmit)}>
+                                <input placeholder="Recipient Full Name" readonly type="text" {...register("recipientName", { required: true })} value={user.displayName} />
+                                <input placeholder="Recipient Email" type="email" value={user.email} readOnly {...register("recipientEmail", { required: true })} />
+                                <input placeholder="Recipient Phone Number" type="number" {...register("phoneNumber", { required: true })} />
+                                <input placeholder="Adrress" type="text" {...register("address", { required: true })} />
+                                <input placeholder="City" type="text" {...register("City", { required: true })} />
+                                <input placeholder="Country" type="text" {...register("Country", { required: true })} />
+                                <input placeholder="Zip code" type="text" {...register("zipCode", { required: true })} />
+                                <input className="btn btn-dark" type="submit" value="BOOK PACKAGE" />
+                            </form>
+                        </div>
+                    </Col>
                 </Row>
+
             </Container>
 
-        </div >
+        </div>
     );
 };
 
-export default PackageDetails;
+export default Booking;

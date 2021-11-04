@@ -59,7 +59,9 @@ const Package = (props) => {
                                 <p className="fs-5 text-center text-dark">see what's inclued?</p>
                             </Link>
                         </div>
-                        <button className="btn btn-dark text-white px-4 rounded-pill">Book Now</button>
+                        <Link to={`/booking/${_id}`}>
+                            <button className="btn btn-dark text-white px-4 rounded-pill">Book Now</button>
+                        </Link>
                     </div>
                 </div>
             </div>
