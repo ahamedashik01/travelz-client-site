@@ -1,9 +1,19 @@
 import { Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import swal from 'sweetalert';
 
 const MangeBooking = (props) => {
     const { booking, _id, status, recipientName, recipientEmail } = props.singleBooking;
 
+
+    const handleAlert = () => {
+        swal({
+            title: "Ops, Sorry!",
+            text: "Approval is not Availvale right now!",
+            icon: "warning",
+            button: "Understood",
+        })
+    }
     const handleDelete = id => {
         const procced = window.confirm('Are you sure, you want to cancel?');
         if (procced) {
@@ -20,6 +30,9 @@ const MangeBooking = (props) => {
                     }
                 });
         }
+
+
+
 
     }
     return (
@@ -68,7 +81,7 @@ const MangeBooking = (props) => {
                         </td>
                         <td className="p-2">
                             <p>{status}</p> <br />
-                            <button className="btn btn-success">Approve</button>
+                            <button onClick={() => handleAlert()} className="btn btn-success">Approve</button>
                         </td>
                     </tr>
 

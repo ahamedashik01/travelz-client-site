@@ -2,9 +2,22 @@ import React from 'react';
 import axios from 'axios';
 import { useForm } from "react-hook-form";
 import "./NewPackage.css"
+import swal from 'sweetalert';
 
 const NewPackage = () => {
     const { register, handleSubmit, reset } = useForm();
+
+
+    // alert 
+    const showAlert = () => {
+        swal({
+            title: "Succesfully Added!",
+            text: "Go to Packages to see your added package now!",
+            icon: "success",
+            button: "Okey",
+        })
+    }
+
 
     const onSubmit = data => {
         const newPakageInc = [data.pakageInc];
@@ -13,7 +26,7 @@ const NewPackage = () => {
         axios.post('https://fierce-lowlands-27228.herokuapp.com/packages', data)
             .then(res => {
                 if (res.data.insertedId) {
-                    alert('Package Added Successfully. Go to PACKAGES to see Your Added Package');
+                    showAlert();
                     reset();
                 }
             })

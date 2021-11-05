@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Spinner } from 'react-bootstrap';
 import MangeBooking from '../../MangeBooking/MangeBooking';
 
 const AllOrders = () => {
@@ -12,9 +13,10 @@ const AllOrders = () => {
     }, [])
     return (
         <div className="container">
-            <h2 className="my-4">Manage All Bookings</h2>
+            <h1 className="my-4">Manage All Bookings</h1>
 
-            {
+            {bookings.length === 0 ? <Spinner className="mx-auto" animation="grow" />
+                :
                 bookings.map(singleBooking => <MangeBooking
                     key={singleBooking._id}
                     singleBooking={singleBooking}

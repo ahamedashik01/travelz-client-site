@@ -31,7 +31,9 @@ const PackageDetails = () => {
                                     pakageInc?.map(p => <li> {p} </li>)
                                 }
                             </ul>
-                            <button className="btn btn-dark text-white mt-3 px-4 rounded-pill">Book Now</button>
+                            <Link to={`/booking/${_id}`}>
+                                <button className="btn btn-dark text-white mt-4 px-4 rounded-pill">Book Now</button>
+                            </Link>
                         </div>
                     </Col>
                     <Col sm={12} md={4} className="mb-5">
