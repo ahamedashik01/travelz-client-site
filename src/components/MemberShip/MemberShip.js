@@ -51,7 +51,7 @@ const MemberShip = () => {
                                 <Table>
                                     <thead>
                                         <tr >
-                                            <th ><span className="fs-4 fw-light">Detal Care</span></th>
+                                            <th ><span className="fs-4 fw-light">Gold</span></th>
                                         </tr>
                                     </thead>
                                     <tbody className="text-start">
@@ -83,7 +83,7 @@ const MemberShip = () => {
                                 <Table>
                                     <thead>
                                         <tr >
-                                            <th ><span className="fs-4 fw-light">Body Checkup</span></th>
+                                            <th ><span className="fs-4 fw-light">Silver</span></th>
                                         </tr>
                                     </thead>
                                     <tbody className="text-start">
@@ -101,7 +101,7 @@ const MemberShip = () => {
                                         </tr>
                                     </tbody>
                                 </Table>
-                                <button className="btn btn-dark rounded-pill text-white px-4 mb-4">Get Offer</button>
+                                <button className="btn btn-dark rounded-pill text-white px-4 mb-4">Srart Up</button>
                             </div>
                         </div>
                     </Col>
