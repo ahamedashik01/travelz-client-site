@@ -2,6 +2,7 @@ import React from 'react';
 import { Col, Container, Form, Row, } from 'react-bootstrap';
 
 const Contact = () => {
+
     return (
         <div className="text-dark py-5 my-5 quality">
             <Container className="py-5">
@@ -14,12 +15,9 @@ const Contact = () => {
                         <div>
                             <img className="img-fluid" src="https://image.freepik.com/free-vector/flat-travel-background_23-2148050086.jpg" alt="hero" />
                         </div>
-
                     </Col>
-                    <Col sm={12} md={6} className="text-start mx-auto shadow p-4">
-
+                    <Col sm={12} md={6} className="quality text-start mx-auto shadow p-4">
                         <h2 className="mb-5">Have any question?</h2>
-
                         {/* contract From  */}
                         <Form>
                             <Row className="mb-3">
@@ -32,12 +30,10 @@ const Contact = () => {
                                     <Form.Control as="textarea" placeholder="How can we help you?" rows={3} />
                                 </Form.Group>
                             </Row>
-
                             <Form.Group className="mb-3" controlId="formGridAddress1">
                                 <Form.Label>Address</Form.Label>
                                 <Form.Control placeholder="Where you from?" />
                             </Form.Group>
-
                             <Row className="mb-3">
                                 <Form.Group as={Col} controlId="formGridCity">
                                     <Form.Label>City</Form.Label>

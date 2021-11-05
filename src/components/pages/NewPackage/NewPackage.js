@@ -1,12 +1,11 @@
 import React from 'react';
 import axios from 'axios';
 import { useForm } from "react-hook-form";
-import "./NewPackage.css"
 import swal from 'sweetalert';
+import "./NewPackage.css"
 
 const NewPackage = () => {
     const { register, handleSubmit, reset } = useForm();
-
 
     // alert 
     const showAlert = () => {
@@ -17,7 +16,6 @@ const NewPackage = () => {
             button: "Okey",
         })
     }
-
 
     const onSubmit = data => {
         const newPakageInc = [data.pakageInc];
@@ -31,6 +29,7 @@ const NewPackage = () => {
                 }
             })
     }
+
     return (
         <div className="quality">
             <div className="package-adder shadow p-2 my-5">
@@ -50,7 +49,6 @@ const NewPackage = () => {
                     <input className="btn-dark" type="submit" value="CREATE PACKAGE" />
                 </form>
             </div>
-
         </div>
     );
 };

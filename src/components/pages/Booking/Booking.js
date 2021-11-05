@@ -31,6 +31,7 @@ const Booking = () => {
             .then(data => setPackages(data))
     }, []);
 
+    // form 
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         data.booking = packages;
@@ -43,7 +44,6 @@ const Booking = () => {
                 }
             })
     }
-
 
     return (
         <div>
@@ -59,7 +59,6 @@ const Booking = () => {
                                     <h4 className="pe-3"><i className="fas fa-pound-sign me-1"></i>{tourCost} GBP</h4>
                                 </div>
                             </div>
-
                             <div className="des text-start py-3">
                                 <Row className="p-2 quality">
                                     <Col sm={6} md={6}>
@@ -124,9 +123,7 @@ const Booking = () => {
                         </div>
                     </Col>
                 </Row>
-
             </Container>
-
         </div>
     );
 };

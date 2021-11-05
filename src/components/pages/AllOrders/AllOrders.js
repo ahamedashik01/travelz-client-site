@@ -11,18 +11,21 @@ const AllOrders = () => {
             .then(res => res.json())
             .then(data => setBookings(data))
     }, [])
+
     return (
         <div className="container">
             <h1 className="my-4">Manage All Bookings</h1>
 
-            {bookings.length === 0 ? <Spinner className="mx-auto" animation="grow" />
-                :
-                bookings.map(singleBooking => <MangeBooking
-                    key={singleBooking._id}
-                    singleBooking={singleBooking}
-                >
+            {
+                bookings.length === 0 ?
+                    <Spinner className="mx-auto" animation="grow" />
+                    :
+                    bookings.map(singleBooking => <MangeBooking
+                        key={singleBooking._id}
+                        singleBooking={singleBooking}
+                    >
 
-                </MangeBooking>)
+                    </MangeBooking>)
             }
 
         </div>

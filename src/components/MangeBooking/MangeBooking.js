@@ -5,7 +5,7 @@ import swal from 'sweetalert';
 const MangeBooking = (props) => {
     const { booking, _id, status, recipientName, recipientEmail } = props.singleBooking;
 
-
+    //alert
     const handleAlert = () => {
         swal({
             title: "Ops, Sorry!",
@@ -14,6 +14,7 @@ const MangeBooking = (props) => {
             button: "Understood",
         })
     }
+
     const handleDelete = id => {
         const procced = window.confirm('Are you sure, you want to cancel?');
         if (procced) {
@@ -30,10 +31,6 @@ const MangeBooking = (props) => {
                     }
                 });
         }
-
-
-
-
     }
     return (
         <div className="mb-5 p-3 shadow quality">

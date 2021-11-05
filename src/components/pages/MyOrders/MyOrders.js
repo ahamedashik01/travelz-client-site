@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Row, Spinner, Table } from 'react-bootstrap';
+import { Spinner } from 'react-bootstrap';
 import useAuth from '../../../hooks/useAuth';
 import MyOrder from '../MyOrder/MyOrder';
 import './MyOrders.css'
@@ -22,16 +22,16 @@ const MyOrders = () => {
         <div className="container h100">
             <h1 className="my-4"> MY ORDER</h1>
 
+            {
+                booking.length === 0 ?
+                    <Spinner className="mx-auto" animation="grow" />
+                    :
+                    filterBooking.map(singleBooking => <MyOrder
+                        key={singleBooking._id}
+                        singleBooking={singleBooking}
+                    >
 
-            {booking.length === 0 ?
-                <Spinner className="mx-auto" animation="grow" />
-                :
-                filterBooking.map(singleBooking => <MyOrder
-                    key={singleBooking._id}
-                    singleBooking={singleBooking}
-                >
-
-                </MyOrder>)
+                    </MyOrder>)
             }
 
         </div>

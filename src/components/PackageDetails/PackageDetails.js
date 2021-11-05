@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 const PackageDetails = () => {
     const [packages, setPackages] = useState([]);
     const { id } = useParams();
+
     const url = `https://fierce-lowlands-27228.herokuapp.com/packages/${id}`
     useEffect(() => {
         fetch(url)
@@ -14,7 +15,7 @@ const PackageDetails = () => {
     }, []);
 
     const { _id, tourTittle, thumNail, detailDes, headerDes, pakageInc, tourCost, tourLength, noOFMeal, noOFAct, avgGrpSize_min, avgGrpSize_max } = packages;
-    console.log(pakageInc)
+
     return (
         <div className="my-5 py-5 ">
             <Container>
@@ -42,7 +43,6 @@ const PackageDetails = () => {
                                 <h3 className="mb-3">{tourTittle} <Badge className="ms-2" pill bg="dark"><i className="fas fa-pound-sign me-2"></i>{tourCost}</Badge></h3>
                                 <hr />
                             </div>
-
                             <div className="des text-start py-3">
                                 <Row className="p-2 quality">
                                     <Col sm={6} md={6}>
@@ -92,7 +92,6 @@ const PackageDetails = () => {
                     </Col>
                 </Row>
             </Container>
-
         </div >
     );
 };

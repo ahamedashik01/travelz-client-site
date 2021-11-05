@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 const MyOrder = (props) => {
     const { booking, _id, status } = props.singleBooking;
 
-
     const handleDelete = id => {
         const procced = window.confirm('Are you sure, you want to cance?');
         if (procced) {
@@ -26,7 +25,6 @@ const MyOrder = (props) => {
 
     return (
         <div className="mb-5 p-3 shadow quality">
-
             <Table responsive striped bordered hover size="sm">
                 <tbody>
                     <tr>
@@ -53,7 +51,6 @@ const MyOrder = (props) => {
                             <p>{status}</p>
                         </td>
                     </tr>
-
                 </tbody>
             </Table>
         </div>

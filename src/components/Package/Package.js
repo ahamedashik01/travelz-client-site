@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Package = (props) => {
     const { _id, tourTittle, thumNail, des, tourCost, tourLength, noOFMeal, noOFAct, avgGrpSize_min, avgGrpSize_max } = props.package
+
     return (
         <Col sm={12} md={4}>
             <div className="p-3 shadow ">

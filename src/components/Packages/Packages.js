@@ -26,7 +26,6 @@ const Packages = () => {
                                 key={singlePackage._id}
                                 package={singlePackage}
                             >
-
                             </Package>)
                     }
                 </Row>
