@@ -57,7 +57,7 @@ const Header = () => {
                                             <div>
                                                 <Button style={{ backgroundImage: `url(${userImg})`, backgroundSize: 'cover', height: '50px', width: '50px', borderRadius: '50%' }} variant="dark" onClick={handleShow} className="text-white">
                                                 </Button>
-                                                <Offcanvas show={show} onHide={handleClose} placement="end">
+                                                <Offcanvas className="quality" show={show} onHide={handleClose} placement="end">
                                                     <Offcanvas.Header className="ms-auto" closeButton>
                                                     </Offcanvas.Header>
                                                     <Offcanvas.Body>

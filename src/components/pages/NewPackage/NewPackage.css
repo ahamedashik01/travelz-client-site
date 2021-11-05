@@ -1,5 +1,4 @@
 .package-adder{
-    border: 2px solid #000;
     width: 50%;
     margin: auto;
 }
@@ -11,7 +10,7 @@
     align-items: center;
 }
 .package-adder form input,textarea{
-    width: 40%;
+    width: 90%;
     margin-bottom: 20px;
     padding: 10px;
 }

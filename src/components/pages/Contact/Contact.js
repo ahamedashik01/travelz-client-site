@@ -16,7 +16,7 @@ const Contact = () => {
                         </div>
 
                     </Col>
-                    <Col sm={12} md={6} className="text-start mx-auto">
+                    <Col sm={12} md={6} className="text-start mx-auto shadow p-4">
 
                         <h2 className="mb-5">Have any question?</h2>
 

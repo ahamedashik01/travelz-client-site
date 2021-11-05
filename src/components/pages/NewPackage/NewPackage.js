@@ -20,7 +20,7 @@ const NewPackage = () => {
     }
     return (
         <div className="quality">
-            <div className="package-adder my-5">
+            <div className="package-adder shadow p-2 my-5">
                 <h3 className="my-4">Create & Plan Your Own Tour Package<span class="badge bg-dark rounded-pill ms-2">New</span></h3>
                 <hr />
                 <form className="py-5" onSubmit={handleSubmit(onSubmit)}>

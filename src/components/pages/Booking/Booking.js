@@ -5,15 +5,24 @@ import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
+import swal from 'sweetalert';
 import './Booking.css'
 
 const Booking = () => {
     const [packages, setPackages] = useState([]);
     const { id } = useParams();
-
     const { user } = useAuth();
-
     const { _id, tourTittle, tourCost, tourLength, noOFMeal, noOFAct, avgGrpSize_min, avgGrpSize_max } = packages;
+
+    // alert 
+    const showAlert = () => {
+        swal({
+            title: "Succesfully Booked!",
+            text: "We are meeting soon!",
+            icon: "success",
+            button: "Aww yiss!",
+        })
+    }
 
     const url = `https://fierce-lowlands-27228.herokuapp.com/packages/${id}`
     useEffect(() => {
@@ -24,13 +33,12 @@ const Booking = () => {
 
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
-        const userName = user.displayName;
-        const userEmail = user.email;
         data.booking = packages;
+        data.status = 'pending';
         axios.post('https://fierce-lowlands-27228.herokuapp.com/booking', data)
             .then(res => {
                 if (res.data.insertedId) {
-                    alert('Package Added Successfully. Go to PACKAGES to see Your Added Package');
+                    showAlert();
                     reset();
                 }
             })
@@ -100,7 +108,7 @@ const Booking = () => {
                         </div>
                     </Col>
                     <Col sm={12} md={7}>
-                        <div className="booking-adder shadow p-2">
+                        <div className="booking-adder shadow p-2 quality">
                             <h4 className="my-4 text-center px-4"> Your Details</h4>
                             <hr />
                             <form onSubmit={handleSubmit(onSubmit)}>

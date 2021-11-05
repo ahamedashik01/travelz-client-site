@@ -5,7 +5,7 @@ const About = () => {
     return (
         <div className="mt-5 pt-5" >
             <Container>
-                <div style={{ backgroundImage: "url('https://image.freepik.com/free-vector/white-background-with-3d-hexagonal-pattern-design_1017-28443.jpg')", backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }} className=" text-dark py-5">
+                <div className=" text-dark quality py-5">
                     <Container className="p-5">
                         <Row className="5">
                             <Col sm={12} md={6} className="text-start my-5">
@@ -20,7 +20,7 @@ const About = () => {
                     </Container>
                 </div>
             </Container>
-            <Container className="my-5 py-5">
+            <Container className="my-5 shadow py-5">
                 <Row>
                     <Col md={6} sm={12}>
                         <img className="img-fluid" src="http://blog.westminster.ac.uk/wp-content/uploads/sites/16/2019/07/f-a-q-4226.png?resize=823%2C400" alt="" />
