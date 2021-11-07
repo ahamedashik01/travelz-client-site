@@ -29,27 +29,27 @@ const About = () => {
                     <Col md={6} sm={12} className="my-auto py-5 my-5">
                         <Accordion defaultActiveKey="0" flush>
                             <Accordion.Item eventKey="0">
-                                <Accordion.Header > <h6> How do I make an Booking? </h6></Accordion.Header>
+                                <Accordion.Header > <p> How do I make an Booking? </p></Accordion.Header>
                                 <Accordion.Body className="text-start">
                                     To make Booking for Consultation with our Consultants who sit in our Out-patient Departments, please call our hotline 10666 from any phone anywhere in the country or you can call in our booking Desk landline 02 22 22 62 466 you can call in these numbers to make booking for any investigations or procedures as well.
                                 </Accordion.Body>
                             </Accordion.Item>
                             <Accordion.Item eventKey="1">
-                                <Accordion.Header> <h6> Do you have Consultants available for 24 hours? </h6></Accordion.Header>
+                                <Accordion.Header> <p> Do you have Consultants available for 24 hours? </p></Accordion.Header>
                                 <Accordion.Body className="text-start">
                                     In our agency, to provide Consultation services, our Consultants are available from 7am till 9pm on weekdays (Saturday to Thursday); of course the time varies from Consultant to Consultant; in Friday as well we have few Consultants sitting their OPD. To know details as per your choice of Consultant, please call in our  hotline number 10666 from any phone anywhere in the country or you can call in our booking Desk landline 02 22 22 62 466
                                 </Accordion.Body>
                             </Accordion.Item>
                             <Accordion.Item eventKey="2">
                                 <Accordion.Header>
-                                    <h6> Who can I call for assistance in the Agency during odd hours or on holidays?</h6></Accordion.Header>
+                                    <p> Who can I call for assistance in the Agency during odd hours or on holidays?</p></Accordion.Header>
                                 <Accordion.Body className="text-start">
                                     For enquiries within the Agency during odd hours and on holidays, please call our Duty Manager at 01914001399. For any enquiry about any clinical condition.
                                 </Accordion.Body>
                             </Accordion.Item>
                             <Accordion.Item eventKey="3">
                                 <Accordion.Header>
-                                    <h6>How will I make an insurance claim?</h6></Accordion.Header>
+                                    <p>How will I make an insurance claim?</p></Accordion.Header>
                                 <Accordion.Body className="text-start">First please check whether you have GOP (Guarantee of Payment) letter issued by your Insurance Company to avail the specific service that you have come for (either in OPD or IPD). Also check whether your insurance company has any formal agreement with United Agency, being enlisted makes the job faster. As a note of authentification, during the time of service, you need to show your Health Card and GOP issued by your Insurance Company.
                                 </Accordion.Body>
                             </Accordion.Item>
